@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./index.js"></script>
+  <script>
+    //1.es5裡面的類
+    // function Person() {
+    //   this.name = '張三';
+    //   this.age = 20;
+
+    //   this.run = function () {
+    //     alert(this.name + '在運動')
+    //   }
+    // }
+
+    // var p = new Person(); //實例化
+
+    // Person.run();
+
+    //2.構造函數和原型鏈裡面增加方法
+
+    // function Person() {
+
+    //   this.name='張三'; //屬性
+    //   this.age= 20;
+
+    //   this.run=function() {
+    //     alert(this.name + '在運動')
+    //   }
+    // }
+
+    //原型鏈上面的屬性會被多個實例共享 構造函數部會
+    // Person.prototype.sex='男'
+
+    // Person.prototype.work=function() {
+    //   alert(this.name + '在工作')
+    // }
+
+    // var p=new Person();
+
+    // // alert(p.name);
+
+    // // p.run()
+    // p.work()
+
+    //3.類裡面的靜態方法
+
+    // function Person() {
+
+    //   this.name = '張三'; //屬性
+    //   this.age = 20;
+
+    //   this.run = function () {
+    //     alert(this.name + '在運動')
+    //   }
+    // }
+
+    // Person.getInfo = function () {
+    //   alert('我是靜態方法')
+    // }
+    // //原型鏈上面的屬性會被多個實例共享 構造函數部會
+    // Person.prototype.sex = '男'
+
+    // Person.prototype.work = function () {
+    //   alert(this.name + '在工作')
+    // }
+
+    // var p = new Person();
+
+    // // alert(p.name);
+
+    // // p.run()
+    // p.work()
+
+    // //調用靜態方法
+
+    // Person.getInfo()
+
+    //es5裡面的繼承
+
+    // function Person() {
+
+    //   this.name = '張三'; //屬性
+    //   this.age = 20;
+
+    //   this.run = function () {
+    //     alert(this.name + '在運動')
+    //   }
+    // }
+    // Person.prototype.sex = '男'
+
+    // Person.prototype.work = function () {
+    //   alert(this.name + '在工作')
+    // }
+    //web類 繼承Person類 對象冒充的繼承模式
+
+    // function Web() {
+    //   Person.call(this) //對象冒充實現繼承
+    // }
+
+    // var w=new Web()
+
+    // // w.run(); //對象冒充可以記構造函數裡面的屬性和方法
+
+    // w.work(); //對象冒充可以繼承構造函數裡面的屬性和方法，但是沒辦法繼承原型鏈上面的屬性和方法
+
+    //web類 繼承Person類 原型鏈實現的繼承
+
+    // function Web() {
+
+    // }
+    // Web.prototype = new Person(); //原型鏈實現繼承
+    // //原型鏈實現繼承: 可以繼承構造函數和原型鏈裡面的方法
+    // var w=new Web();
+
+    // w.work()
+
+    //---->原型鏈實現的繼承無法從構造函數中傳遞參數
+
+    //原型鏈+構造函數的組合繼承模式
+
+    // function Person(name, age) {
+
+    //   this.name = name; //屬性
+    //   this.age = age;
+
+    //   this.run = function () { //實例方法
+    //     alert(this.name + '在運動')
+    //   }
+    // }
+    // Person.prototype.sex = '男'
+
+    // Person.prototype.work = function () {
+    //   alert(this.name + '在工作')
+    // }
+
+    // function Web(name, age) {
+    //   Person.call(this,name,age);  //對象冒充繼承 實例化子類可以給父類傳參
+    // }
+
+    // // Web.prototype=new Person(); //兩種方法都可以繼承
+    // Web.prototype=Person.prototype;
+
+    // var w=new Web('趙四', 20);
+
+    // w.work();
+    // w.run();
+
+    // var w1=new Web('李五', 25);
+
+    // w1.work();
+  </script>
+</body>
+
+</html>
